@@ -19,7 +19,11 @@ module.exports = {
         }
 
 	    new ExifImage({ image : file.path }, function (error, exifData) {
-			if(exifData !== undefined) {
+	    	console.log(error, exifData);
+	    	if(error) 
+	    		return false;
+	    	console.log(Object.keys(exifData.image).length);
+			if(Object.keys(exifData.image).length) {
 				console.log('ExifData');
 				var gps = exifData.gps;
 	        	geoInfo = gps.GPSLongitudeRef + gps.GPSLongitude.join() + gps.GPSLatitudeRef + gps.GPSLatitude.join();

@@ -105,6 +105,8 @@ h6, .h6 {
 
 .photos .item {
   margin-top: 30px;
+  height: 186px;
+  overflow: hidden;
 }
 
 

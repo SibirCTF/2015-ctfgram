@@ -14,11 +14,9 @@ var crypto = require('crypto'),
 var Photo = new Schema({
     geo: {
         type: String,
-        required: true
     },
     description: {
         type: String,
-        required: true
     },
     url: {
         type: String,
