@@ -1,0 +1,33 @@
+<%- include('header'); -%>
+    <div class="container">
+      <div class="blog-header">
+        <h1 class="blog-title">Add photo</h1>
+        <p class="lead blog-description">Capture a moment in life.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 blog-main">
+        <% if(message != '') { %>
+          <div class="alert alert-success" role="alert"><%= message %></div>    
+        <% } %>
+          <form method="POST" action="/add" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="exampleInputFile">Photo</label>
+              <input type="file" name="photo">
+              <p class="help-block">We also support EXIF tags.</p>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Description</label>
+              <input class="form-control" name="descr" placeholder="Enter description">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Location</label>
+              <input class="form-control" name="geo" placeholder="Enter location">
+            </div>
+            <button type="submit" class="btn btn-success">Add photo</button>
+          </form>
+        </div><!-- /.blog-main -->
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+<%- include('footer'); -%>

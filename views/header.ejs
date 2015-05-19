@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Blog Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://yastatic.net/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item <% if(page=="home") { %>active<% } %>" href="/">Поток</a>
+          <a class="blog-nav-item <% if(page=="profile") { %>active<% } %>" href="/profile">Профиль</a>
+          <a class="blog-nav-item" href="#">Настройки</a>
+          <a class="blog-nav-item" href="/login/logout">Выход</a>
+          <a class="blog-nav-item <% if(page=="add") { %>active<% } %>" style="float: right" href="/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Добавить фото</a>
+        </nav>
+      </div>
+    </div>
