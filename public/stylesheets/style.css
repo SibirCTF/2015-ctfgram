@@ -109,7 +109,13 @@ h6, .h6 {
   overflow: hidden;
 }
 
-
+.a:hover {
+  color: #a94442;
+  cursor: pointer;
+}
+.active {
+  color: #a94442;
+}
 /* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;

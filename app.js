@@ -15,6 +15,7 @@ var login = require('./routes/login');
 var profile = require('./routes/profile');
 var photo = require('./routes/photo');
 var add = require('./routes/add');
+var like = require('./routes/like');
 
 var app = express();
 
@@ -48,7 +49,7 @@ app.use('/login', login);
 app.use('/profile', profile);
 app.use('/photo', photo);
 app.use('/add', add);
-
+app.use('/like', like);
 
 
 

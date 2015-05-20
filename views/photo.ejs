@@ -17,17 +17,27 @@
                   <td>
                     <span class="glyphicon glyphicon-comment" style="font-size: 25pt"></span>
                   </td>
-                  <td width="50" style="padding-left: 10px;">123</td> 
-                  <td class="a">
-                    <span class="glyphicon glyphicon-heart" style="font-size: 25pt"></span>
+                  <td width="50" style="padding-left: 10px;">4</td> 
+                  <td class="a" width="100">
+                    <div class="like <%= (is_like ? "active": "")  %>" data-id="<%= item.id %>"><span class="glyphicon glyphicon-heart" style="font-size: 25pt"></span></div>
                   </td>
-                  <td width="50" style="padding-left: 10px;">123</td>
               </tr></table>
               
             </div>
           </div>
         </div><!-- /.blog-main -->
         <div class="col-sm-4">
+        <div class="media" style="margin-bottom: 60px">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" width="50" src="/images/user.jpg" alt="">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><%= item.owner %></h4>
+              <%= item.description %>
+            </div>
+          </div>
           <div class="media">
             <div class="media-left">
               <a href="#">
@@ -74,6 +84,21 @@
           </div>
         </div>
       </div><!-- /.row -->
-
     </div><!-- /.container -->
+    <script type="text/javascript">
+    $(".like").click(function() {
+      var el = $(this);
+      $.ajax({
+        url: '/like',
+        method: 'GET',
+        data: {
+          photo: el.data('id'),
+          user: '<%= user_id %>'
+        },
+        success: function(data) {
+          el.toggleClass('active');
+        }
+      });
+    });
+    </script>
 <%- include('footer'); -%>
