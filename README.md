@@ -3,6 +3,8 @@
 # Требования
 - Node.js
 - Mongo
+- Некоторые пакеты в чекере (pyexiv2) и др.
+
 # Установка
     apt-get install node
     npm install
