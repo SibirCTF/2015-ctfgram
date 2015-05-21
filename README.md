@@ -2,6 +2,7 @@
 
 # Требования
 - Node.js
+- Mongo
 # Установка
     apt-get install node
     npm install

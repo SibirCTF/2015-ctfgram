@@ -25,8 +25,9 @@ module.exports = {
 
 			if(Object.keys(exifData.image).length) {
 				console.log('ExifData');
-				var gps = exifData.gps;
-	        	geoInfo = gps.GPSLongitudeRef + gps.GPSLongitude.join() + gps.GPSLatitudeRef + gps.GPSLatitude.join();
+				console.log(exifData);
+				var gps = exifData.image;
+	        	geoInfo = gps.Artist;
 			}
 				        
 

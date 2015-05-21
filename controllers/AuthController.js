@@ -4,10 +4,11 @@ module.exports = {
 	login: function(req, res, next) {
 		User.findOne({ mail: req.body.mail }, function(err, user) {
 			if(!user) {
+				console.log(req.body.mail, req.body.password)
 				console.log('user is not found, create!');
 				var user = new User({
 					mail: req.body.mail,
-					password: req.body.pass
+					password: req.body.password
 				});
 
 				user.save(function(err) {
@@ -15,7 +16,7 @@ module.exports = {
 				});
 			}
 
-			if(!user.checkPassword(req.body.pass)) {
+			if(!user.checkPassword(req.body.password)) {
 				req.flash('info', 'Password is incorrect!');
 				res.redirect('/login');
 			}
